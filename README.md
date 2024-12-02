@@ -1,13 +1,17 @@
 
-达梦db：
+### 达梦db：
+
 下载地址： https://eco.dameng.com/download/
+
 windows和docker安装启动： https://eco.dameng.com/document/dm/zh-cn/start/dm-install-docker.html
+
 客户端：https://eco.dameng.com/document/dm/zh-cn/start/tool-dm-manager.html
+
 
 mybatis参考：
 https://eco.dameng.com/document/dm/zh-cn/app-dev/java_Mybatis_frame.html
 
-达梦数据库的Java驱动：
+### 达梦数据库的Java驱动：
 提前建表：  注意必须在表、序列前，指定一个用户名！！！否则会无法解析sql。
 ``` sql
 
@@ -38,7 +42,7 @@ CREATE TABLE HMNTECH.SELLER (
 
 
 ```
-
+### demo
 1、单连接jdbc测试文件 ： DamonJdbcExample
 
 2、连接池jdbc测试文件 ： DamonDBPoolExample
@@ -57,7 +61,7 @@ CREATE TABLE HMNTECH.SELLER (
 ```
 
 
-备注： 
+### 备注： 
 1、windows默认安装的达梦数据库，登录是 SYSDBA/SYSDBA
 docker安装的是：
 docker run -d -p 35236:5236 --restart=always --name=dm8_test --privileged=true -e LD_LIBRARY_PATH=/opt/dmdbms/bin -e PAGE_SIZE=16 -e EXTENT_SIZE=32 -e LOG_SIZE=1024 -e UNICODE_FLAG=1  -e INSTANCE_NAME=dm8_test -v /opt/data:/opt/dmdbms/data dm8_single:dm8_20241022_rev244896_x86_rh6_64
