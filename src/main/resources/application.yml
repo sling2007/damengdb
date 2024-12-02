@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:dm://localhost:5236
+    username: HMNTECH
+    password: Marine.123
+    driver-class-name: dm.jdbc.driver.DmDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      stat-view-servlet:
+        enabled: true
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 2000
+          merge-sql: true
+
+logging:
+  level:
+    root: debug
+    com.sling: debug
+    com.sling.springweb.mapper: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.sling.springweb.entity
